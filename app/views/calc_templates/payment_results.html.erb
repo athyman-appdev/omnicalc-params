@@ -11,6 +11,8 @@
     <dt><%= number_to_currency(@the_principal.to_f.round(2)) %></dt>
     
     <dt>Payment</dt>
-    <dt>$<%= @monthly_payment %></dt> 
+    <dt><%= number_to_currency(@monthly_payment.to_f.round(2)) %></dt> 
+    
+    <a href="/payment/new">Calculate another payment</a>
     
 </dl>

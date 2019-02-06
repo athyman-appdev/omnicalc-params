@@ -1,5 +1,7 @@
 class CalcController < ApplicationController
-    
+    def home_page
+        render("calc_templates/square_form_entry.html.erb")
+    end
     def flex_square
         @flex_square = params.fetch("the_num").to_i
             
@@ -55,12 +57,6 @@ class CalcController < ApplicationController
    
    def payment_form_results
        
-    #apr_monthly = apr.to_f/12
-    #apr_monthly_actual = apr_monthly/100
- # months = years*12
- # numerator = apr_monthly_actual*principal.to_f
- # denominator = 1-((1+apr_monthly_actual)**(-months).to_f)
- # monthly_payment = (numerator/denominator).round(2)
         @the_apr = params.fetch("user_rate").to_f
         @the_years = params.fetch("user_years").to_f
         @the_principal = params.fetch("user_principal").to_f
@@ -87,5 +83,18 @@ class CalcController < ApplicationController
         
        render("calc_templates/flexible_random.html.erb")
     end
+   
+    def random_form_results
+       
+       @the_minimum = params.fetch("user_minimum").to_f
+       @the_maximum = params.fetch("user_maximum").to_f
+       @the_random = rand(@the_minimum..@the_maximum)
+       
+       render("calc_templates/random_results.html.erb")
+    end
+   
+   def random_form_entry
+       render("calc_templates/random_form_entry.html.erb")
+   end
     
 end
