@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get("/flexible/square/:the_num", {:controller => "calc", :action => "flex_square"})
   
   get("/square/results", {:controller => "calc", :action => "square_form_results"})
+  get("/square/new", {:controller => "calc", :action => "square_form_entry"})
   
   get("/flexible/square_root/:the_root", {:controller => "calc", :action => "flex_square_root"})
   
