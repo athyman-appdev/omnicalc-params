@@ -1,0 +1,16 @@
+<h1>Payment Results</h1>
+
+<dl>
+    <dt>APR</dt>
+    <dt><%= number_to_percentage(@the_apr.round(4), precision: 4)%></dt>
+    
+    <dt>Number of years</dt>
+    <dt><%= @the_years %></dt>
+    
+    <dt>Principal</dt>
+    <dt><%= number_to_currency(@the_principal.to_f.round(2)) %></dt>
+    
+    <dt>Payment</dt>
+    <dt>$<%= @monthly_payment %></dt> 
+    
+</dl>

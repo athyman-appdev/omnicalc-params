@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   
   get("/flexible/square_root/:the_root", {:controller => "calc", :action => "flex_square_root"})
   
-  get("/flexible/payment/:the_rate/:the_years/:the_principal", {:controller => "calc", :action => "flex_payment"})
+  get("/square_root/results", {:controller => "calc", :action => "square_root_form_results"})
+  get("/square_root/new", {:controller => "calc", :action => "square_root_form_entry"})
+  
+  get("/flexible/payment/:user_rate/:user_years/:user_principal", {:controller => "calc", :action => "flex_payment"})
+  
+  get("/payment/results", {:controller => "calc", :action => "payment_form_results"})
+  get("/payment/new", {:controller => "calc", :action => "payment_form_entry"})
+  
+  get("/flexible/random/:minimum/:maximum", {:controller => "calc", :action => "flex_random"})
   
 end
