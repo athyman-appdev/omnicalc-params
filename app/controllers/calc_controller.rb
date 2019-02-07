@@ -1,6 +1,6 @@
 class CalcController < ApplicationController
     def home_page
-        render("calc_templates/square_form_entry.html.erb")
+        render("calc_templates/word_count_entry.html.erb")
     end
     def flex_square
         @flex_square = params.fetch("the_num").to_i
@@ -101,9 +101,9 @@ class CalcController < ApplicationController
        
        @word_count_input = params.fetch("word_count_input")
        @special_word = params.fetch("special_word")
-       
+
        @word_count_input_downcase = params.fetch("word_count_input").downcase
-       @special_word_downcase = " "+params.fetch("special_word").downcase
+       @special_word_downcase = params.fetch("special_word").downcase
        
        @special_word_count = @word_count_input_downcase.scan(@special_word_downcase).count
        

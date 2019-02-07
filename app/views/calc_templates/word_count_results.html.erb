@@ -1,20 +1,33 @@
-<h1>Word Count Results</h1>
-
-<dl>
-    <dt>Text</dt>
-    <dd class="font-weight-normal"><%= @word_count_input %></dd>
-    
-    <dt>Word Count</dt>
-    <dd class="font-weight-normal"><%= @word_count_input.split(" ").size %></dd>
-    
-    <dt>Character Count (with spaces)</dt>
-    <dd class="font-weight-normal"><%= @word_count_input.length %></dd>
-    
-    <dt>Character Count (without spaces)</dt>
-    <dd class="font-weight-normal"><%= @word_count_input.gsub(/\s+/, "").length %></dd>
-    
-    <dt>Occurrences of <%=@special_word%></dt>
-    <dd class="font-weight-normal"><%= @special_word_count %></dd>
-    
-    <a href="/word_count/new">Process more text</a>
-</dl>
+<div class="col-md-9">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Word Count Results</h3>
+        </div>
+        <div class="card-body">
+            <dl>
+                <div class="row">
+                    <dt class="col-2 text-align-right">Text</dt>
+                    <dd class="font-weight-normal col-10"><%= @word_count_input %></dd>
+                </div>                
+                <div class="row">
+                    <dt class="col-2 text-align-right">Word Count</dt>
+                    <dd class="font-weight-normal col-10"><%= @word_count_input.split(" ").size %></dd>
+                </div>                
+                <div class="row">
+                    <dt class="col-2 text-align-right">Character Count (with spaces)</dt>
+                    <dd class="font-weight-normal col-10"><%= @word_count_input.length %></dd>
+                </div>                
+                <div class="row">
+                    <dt class="col-2 text-align-right">Character Count (without spaces)</dt>
+                    <dd class="font-weight-normal col-10"><%= @word_count_input.gsub(/\s+/, "").length %></dd>
+                </div>                
+                <div class="row">
+                    <dt class="col-2 text-align-right">Occurrences of <%=@special_word%></dt>
+                    <dd class="font-weight-normal col-10"><%= @special_word_count %></dd>
+                </div>
+                
+                <a href="/word_count/new">Process more text</a>
+            </dl>
+        </div>
+    </div>
+</div>

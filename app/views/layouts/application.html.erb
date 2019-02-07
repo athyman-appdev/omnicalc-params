@@ -6,111 +6,102 @@
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
 
-  <!-- Connect to Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-  <!-- Connect to Font Awesome CSS -->
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
-  <!-- Connect to Bootstrap Javascript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
+  <meta charset="utf-8">
+  <!-- Connect Font Awesome CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <!-- Connect Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <!-- Connect Bootstrap JavaScript and its dependencies -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+  <!-- Make it responsive to small screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <%= javascript_include_tag 'application' %>
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
+    <i class="fa fa-calculator"> </i>
+  <a class="navbar-brand ml-1" href="/word_count/new">Omnicalc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/word_count/new">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Part 1 Targets
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/flexible/square/5">Flexible square example</a>
+          <a class="dropdown-item" href="/flexible/square_root/8">Flexible square root example</a>
+          <a class="dropdown-item" href="/flexible/payment/410/30/250000">Flexible payment example</a>
+          <a class="dropdown-item" href="/flexible/random/50/100">Flexible random example</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Part 2 Targets
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/square/new">Square Form</a>
+          <a class="dropdown-item" href="/square_root/new">Square Root Form</a>
+          <a class="dropdown-item" href="/payment/new">Payment Form</a>
+          <a class="dropdown-item" href="/random/new">Random Form</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Part 3 Targets
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/word_count/new">Word Count Form</a>
+          <a class="dropdown-item" href="/descriptive_stats/new">Descriptive Statistics Form</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+  
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-      <table class="table">
-            <tr>
-              <th>
-                Part I Targets
-              </th>
-
-              <td>
-                <a href="/flexible/square/5">
-                  Flexible Square Example
-                </a>
-              </td>
-
-              <td>
-                <a href="/flexible/square_root/8">
-                  Flexible Square Root Example
-                </a>
-              </td>
-
-              <td>
-                <a href="/flexible/payment/410/30/250000">
-                  Flexible Payment Example
-                </a>
-              </td>
-
-              <td>
-                <a href="/flexible/random/50/100">
-                  Flexible Random Example
-                </a>
-              </td>
-            </tr>
-
-            <tr>
-              <th>
-                Part II Targets
-              </th>
-
-              <td>
-                <a href="/square/new">
-                  Square Form
-                </a>
-              </td>
-
-              <td>
-                <a href="/square_root/new">
-                  Square Root Form
-                </a>
-              </td>
-
-              <td>
-                <a href="/payment/new">
-                  Payment Form
-                </a>
-              </td>
-
-              <td>
-                <a href="/random/new">
-                  Random Form
-                </a>
-              </td>
-            </tr>
-
-            <tr>
-              <th>
-                Part III Targets
-              </th>
-
-              <td>
-                <a href="/word_count/new">
-                  Word Count Form
-                </a>
-              </td>
-
-              <td>
-                <a href="/descriptive_stats/new">
-                  Stats Form
-                </a>
-              </td>
-
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
+      <div class="col-md-3 hidden-xs hidden-sm">
+        <div class="list-group">
+          <a href="/word_count/new" class="list-group-item">
+            <i class="fa fa-book"></i>
+            Word Count
+          </a>
+          <a href="/loan_payment/new" class="list-group-item">
+            <i class="fa fa-money-bill-alt"></i>
+            Loan Payment
+          </a>
+          <a href="/time_between/new" class="list-group-item">
+            <i class="fa fa-clock"></i>
+            Time Between
+          </a>
+          <a href="/descriptive_statistics/new" class="list-group-item">
+            <i class="fa fa-chart-bar"></i>
+            Descriptive Statistics
+          </a>
+        </div>
+      </div>
+      
 
     <%= yield %>
   </div>
 
   
     </div>
-  </div>
   <div class="rails-toolbar">
     <a href="/git" target="_blank" class="rails-toolbar-button">
       Git
