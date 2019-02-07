@@ -22,4 +22,10 @@ Rails.application.routes.draw do
   get("/random/results", {:controller => "calc", :action => "random_form_results"})
   get("/random/new", {:controller => "calc", :action => "random_form_entry"})
   
+  get("/word_count/results", {:controller => "calc", :action => "word_count_results"})
+  get("/word_count/new", {:controller => "calc", :action => "word_count_entry"})
+  
+  get("/descriptive_stats/results", {:controller => "calc", :action => "desc_results"})
+  get("/descriptive_stats/new", {:controller => "calc", :action => "desc_entry"})
+  
 end
